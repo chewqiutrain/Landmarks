@@ -17,8 +17,11 @@ final class ModelData: ObservableObject {
     //an Observable object need to publish any changes to its data so that its subscribers can pick up the change
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     
-    // will never modift hike data after loading, so don't need to publish 
+    // will never modify hike data after loading, so don't need to publish
     var hikes: [Hike] = load("hikeData.json")
+    
+    //instance of user profile that persists even after the user dismissed the view 
+    @Published var profile = Profile.default
     
     var features: [Landmark] {
         landmarks.filter { $0.isFeatured }
