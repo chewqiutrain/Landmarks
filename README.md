@@ -1,2 +1,2 @@
 # Next lesson
-https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes
+https://developer.apple.com/tutorials/swiftui/animating-views-and-transitions
