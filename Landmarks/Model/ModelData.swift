@@ -16,6 +16,9 @@ import Combine
 final class ModelData: ObservableObject {
     //an Observable object need to publish any changes to its data so that its subscribers can pick up the change
     @Published var landmarks: [Landmark] = load("landmarkData.json")
+    
+    // will never modift hike data after loading, so don't need to publish 
+    var hikes: [Hike] = load("hikeData.json")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
