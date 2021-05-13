@@ -19,6 +19,18 @@ final class ModelData: ObservableObject {
     
     // will never modift hike data after loading, so don't need to publish 
     var hikes: [Hike] = load("hikeData.json")
+    
+    var features: [Landmark] {
+        landmarks.filter { $0.isFeatured }
+    }
+    
+    
+    var categories: [String: [Landmark]] {
+        Dictionary(
+            grouping: landmarks,
+            by: { $0.category.rawValue }
+        )
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
